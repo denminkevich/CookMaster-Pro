@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/MainMenu"
+        android:layout_height="wrap_content"
+        android:background="#EFEFEF"
+        app:layout_constraintBottom_toBottomOf="@id/coordinatorLayout"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4">
+        <ImageButton
+            android:id="@+id/imageButtonMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            app:srcCompat="@drawable/ic_icon_main_active" />
+
+        <ImageButton
+            android:id="@+id/imageButtonFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            app:srcCompat="@drawable/ic_icon_fav_nonactive" />
+
+
+        <ImageButton
+            android:id="@+id/imageButtonIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            app:srcCompat="@drawable/ic_icon_ingrid_nonactive" />
+        <ImageButton
+            android:id="@+id/imageButtonShoppingList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            app:srcCompat="@drawable/ic_icon_list_nonactive" />
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_marginBottom="50dp"
+        android:id="@+id/frgmCont"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
