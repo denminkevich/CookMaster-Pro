@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/MainMenu"
         android:layout_height="wrap_content"
@@ -28,15 +28,6 @@
             android:onClick="onClick"
             app:srcCompat="@drawable/ic_icon_main_active" />
 
-        <ImageButton
-            android:id="@+id/imageButtonFavorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00FFFFFF"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            app:srcCompat="@drawable/ic_icon_fav_nonactive" />
-
 
         <ImageButton
             android:id="@+id/imageButtonIngredients"
@@ -46,6 +37,16 @@
             android:layout_weight="1"
             android:onClick="onClick"
             app:srcCompat="@drawable/ic_icon_ingrid_nonactive" />
+
+        <ImageButton
+            android:id="@+id/imageButtonFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="onClick"
+            app:srcCompat="@drawable/ic_icon_fav_nonactive" />
+
         <ImageButton
             android:id="@+id/imageButtonShoppingList"
             android:layout_width="wrap_content"
@@ -65,4 +66,3 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-//Даник привет
