@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">CookMasterF</string>
+    <string name="app_name">CookMaster</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Ingridients">Ингридиенты</string>
+    <string name="cookMaster">КукМастер</string>
+    <string name="favHeader">Избранные</string>
+    <string name="listHeader">Список покупок</string>
 </resources>
