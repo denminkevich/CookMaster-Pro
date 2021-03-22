@@ -1,6 +1,7 @@
 package com.example.cookmasterf;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -13,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
     FragmentFavorite favFrag;
     FragmentIngridients ingridFrag;
     FragmentList listFrag;
+
+    static {
+        AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_NO);
+    }
 
     ImageButton imageButtonMain;
     ImageButton imageButtonFavorite;
