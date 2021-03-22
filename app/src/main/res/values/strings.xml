@@ -6,4 +6,5 @@
     <string name="cookMaster">КукМастер</string>
     <string name="favHeader">Избранные</string>
     <string name="listHeader">Список покупок</string>
+    <string name="searchRecip">Найти</string>
 </resources>

@@ -26,6 +26,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <EditText
+            android:id="@+id/recipesSearch"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_icon_loupe"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/montserrat_subrayada"
+            android:hint="@string/searchRecip"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainTitle" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
