@@ -16,27 +16,30 @@
         app:layout_constraintWidth_percent="0.7"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="17dp"
         android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="140dp"
+        android:id="@+id/someInfo"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent="0.3"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="17dp"
         android:background="#0BB9A0"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/recipeName"
+            android:id="@+id/recipeTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_subrayada"
             android:textSize="11sp"
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:text="Рецепт"
+            android:text="30 мин"
             android:layout_marginTop="22dp"
             android:layout_marginBottom="6dp"
             />
@@ -59,5 +62,20 @@
             android:layout_gravity="center_horizontal|center_vertical"
             />
     </LinearLayout>
+    <TextView
+        android:id="@+id/recipeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рецепт"
+        app:layout_constraintTop_toBottomOf="@id/someInfo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:fontFamily="@font/montserrat_subrayada"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="12dp"
+        android:paddingBottom="12dp"
+        ></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.cookmasterf;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import android.app.Fragment;
@@ -7,8 +8,21 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.appcompat.app.AppCompatActivity;
+import android.widget.ListView;
+import java.util.ArrayList;
 
 public class MainScreenFragment extends Fragment {
+    private Context mContext;
+    public MainScreenFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext=context;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -17,6 +31,16 @@ public class MainScreenFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_main_screen, null);
 
+        ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+        if(recipes.size()==0){
+            recipes.add(new Recipe("Паста по итальянски", "30 мин", "330 ккал", R.drawable.pancakes, R.drawable.favactive));
+            recipes.add(new Recipe("Макароны", "20 мин", "250 ккал", R.drawable.pancakes, R.drawable.favactive));
+            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pancakes, R.drawable.favactive));
+            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pancakes, R.drawable.favactive));
+        }
+        ListView recipeList = (ListView) v.findViewById(R.id.recipeList);
+        RecipeAdapter adapter = new RecipeAdapter(mContext, R.layout.recipe_item, recipes);
+        recipeList.setAdapter(adapter);
 
         return v;
     }

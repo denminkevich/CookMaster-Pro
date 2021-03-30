@@ -3,19 +3,23 @@ package com.example.cookmasterf;
 public class Recipe {
     private String name;
     private String time;
-    private int calorie;
+    private String calorie;
+    private int imageResource;
+    private int imageFavRes;
 
-    Recipe(String name, String time, int calorie){
+    Recipe(String name, String time, String calorie, int imageResource, int imageFavRes){
         this.name = name;
         this.time=time;
-        this.calorie = 0;
+        this.calorie = calorie;
+        this.imageResource = imageResource;
+        this.imageFavRes = imageFavRes;
     }
 
     public String getName(){
         return name;
     }
 
-    public void setName(){
+    public void setName(String name){
         this.name=name;
     }
 
@@ -23,16 +27,32 @@ public class Recipe {
         return time;
     }
 
-    public void setTime(){
+    public void setTime(String time){
         this.time=time;
     }
 
-    public int getCalorie(){
+    public String getCalorie(){
         return calorie;
     }
 
-    public void setCalorie(){
+    public void setCalorie(String calorie){
         this.calorie=calorie;
+    }
+
+    public int getImageResource() {
+        return this.imageResource;
+    }
+
+    public void setImageResource(int imageResource) {
+        this.imageResource = imageResource;
+    }
+
+    public int getImageFavRes() {
+        return this.imageFavRes;
+    }
+
+    public void setImageFavRes(int imageFavRes) {
+        this.imageFavRes = imageFavRes;
     }
 }
 
