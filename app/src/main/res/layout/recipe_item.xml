@@ -3,51 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_layout">
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="253dp"
-        android:layout_height="141dp"
-        android:scaleType="centerCrop"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="150dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:id="@+id/recipeImage"
+
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:scaleType="centerCrop" />
 
     <LinearLayout
-        android:layout_width="84dp"
-        android:layout_height="141dp"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="#0BB9A0"
-        android:baselineAligned="false"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="269dp"
-        tools:layout_editor_absoluteY="150dp">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/recipeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="284dp"
-            tools:layout_editor_absoluteY="211dp" />
+            android:fontFamily="@font/montserrat_subrayada"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="Рецепт"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="6dp"
+            />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/recipeKkal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="282dp"
-            tools:layout_editor_absoluteY="171dp" />
+            android:fontFamily="@font/montserrat_subrayada"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="330 ккал"
+            android:layout_marginBottom="32dp"/>
 
         <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="38dp"
-            android:layout_height="34dp"
-            tools:layout_editor_absoluteX="294dp"
-            tools:layout_editor_absoluteY="253dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:id="@+id/favoritesImage"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
