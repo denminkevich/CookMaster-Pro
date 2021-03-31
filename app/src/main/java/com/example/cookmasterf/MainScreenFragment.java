@@ -34,9 +34,9 @@ public class MainScreenFragment extends Fragment {
         ArrayList<Recipe> recipes = new ArrayList<Recipe>();
         if(recipes.size()==0){
             recipes.add(new Recipe("Паста по итальянски", "30 мин", "330 ккал", R.drawable.pancakes, R.drawable.favactive));
-            recipes.add(new Recipe("Макароны", "20 мин", "250 ккал", R.drawable.pancakes, R.drawable.favactive));
-            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pancakes, R.drawable.favactive));
-            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pancakes, R.drawable.favactive));
+            recipes.add(new Recipe("Макароны", "20 мин", "250 ккал", R.drawable.rice, R.drawable.favactive));
+            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.meat, R.drawable.favactive));
+            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pizza, R.drawable.favactive));
         }
         ListView recipeList = (ListView) v.findViewById(R.id.recipeList);
         RecipeAdapter adapter = new RecipeAdapter(mContext, R.layout.recipe_item, recipes);
