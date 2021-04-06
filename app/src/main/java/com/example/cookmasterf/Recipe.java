@@ -6,13 +6,16 @@ public class Recipe {
     private String calorie;
     private int imageResource;
     private int imageFavRes;
+    private  boolean favourite;
+    private String recipeText;
 
-    Recipe(String name, String time, String calorie, int imageResource, int imageFavRes){
+    Recipe(String name, String time, String calorie, int imageResource, int imageFavRes, boolean favourite){
         this.name = name;
         this.time=time;
         this.calorie = calorie;
         this.imageResource = imageResource;
         this.imageFavRes = imageFavRes;
+        this.favourite = favourite;
     }
 
     public String getName(){
@@ -53,6 +56,22 @@ public class Recipe {
 
     public void setImageFavRes(int imageFavRes) {
         this.imageFavRes = imageFavRes;
+    }
+
+    public boolean getFavourite() {
+        return this.favourite;
+    }
+
+    public void setFavourite(boolean fav) {
+        this.favourite = fav;
+    }
+
+    public String getRecText() {
+        return this.recipeText;
+    }
+
+    public void setRecText(String text) {
+        this.recipeText = text;
     }
 }
 

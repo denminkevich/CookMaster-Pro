@@ -39,7 +39,25 @@ class RecipeAdapter extends ArrayAdapter<Recipe> {
         viewHolder.timeView.setText(recipe.getTime());
         viewHolder.calorieView.setText(recipe.getCalorie());
         viewHolder.imageRecView.setImageResource(recipe.getImageResource());
-        viewHolder.imageFavView.setImageResource(recipe.getImageFavRes());
+
+        if (recipe.getFavourite() == true) {
+            viewHolder.imageFavView.setImageResource(R.drawable.favactive);
+        } else {
+            viewHolder.imageFavView.setImageResource(R.drawable.favnotactive);
+        }
+
+        viewHolder.imageFavView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (recipe.getFavourite() == true) {
+                    recipe.setFavourite(false);
+                    viewHolder.imageFavView.setImageResource(R.drawable.favnotactive);
+                } else {
+                    recipe.setFavourite(true);
+                    viewHolder.imageFavView.setImageResource(R.drawable.favactive);
+                }
+            }
+        });
 
         return convertView;
     }
