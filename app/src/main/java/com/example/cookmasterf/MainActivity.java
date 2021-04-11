@@ -8,12 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     MainScreenFragment mainFrag;
     FragmentFavorite favFrag;
     FragmentIngridients ingridFrag;
     FragmentList listFrag;
+    ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+    public ArrayList<Recipe> getArrayList(){
+        return recipes;
+    }
 
     static {
         AppCompatDelegate.setDefaultNightMode(
@@ -32,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+
+        if(recipes.size()==0){
+            recipes.add(new Recipe("Паста по итальянски", "30 мин", "330 ккал", R.drawable.pancakes, R.drawable.favactive, true));
+            recipes.add(new Recipe("Макароны", "20 мин", "250 ккал", R.drawable.rice, R.drawable.favactive, false));
+            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.meat, R.drawable.favactive, true));
+            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pizza, R.drawable.favactive, true));
+        }
 
         mainFrag = new MainScreenFragment();
         favFrag = new FragmentFavorite();
@@ -89,5 +102,6 @@ public class MainActivity extends AppCompatActivity {
         }
         fTrans.commit();
     }
+
 
 }
