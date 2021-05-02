@@ -39,21 +39,21 @@ public class MainScreenFragment extends Fragment {
         RecipeAdapter adapter = new RecipeAdapter(mContext, R.layout.recipe_item, recipes);
         recipeList.setAdapter(adapter);
 
-        AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                // получаем выбранный пункт
-                Recipe selectedRecipe = (Recipe) parent.getItemAtPosition(position);
-
-                FullRecipe fullRecFrag = new FullRecipe();
-                getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.frgmCont, fullRecFrag, "findThisFragment")
-                        .addToBackStack(null)
-                        .commit();
-
-            }
-        };
-        recipeList.setOnItemClickListener(itemListener);
+//        AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+//                // получаем выбранный пункт
+//                Recipe selectedRecipe = (Recipe) parent.getItemAtPosition(position);
+//
+//                FullRecipe fullRecFrag = new FullRecipe();
+//                getActivity().getFragmentManager().beginTransaction()
+//                        .replace(R.id.frgmCont, fullRecFrag, "findThisFragment")
+//                        .addToBackStack(null)
+//                        .commit();
+//
+//            }
+//        };
+//        recipeList.setOnItemClickListener(itemListener);
 
         return v;
     }

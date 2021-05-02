@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,16 +12,18 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
     MainScreenFragment mainFrag;
     FragmentFavorite favFrag;
     FragmentIngridients ingridFrag;
     FragmentList listFrag;
     ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+    ArrayList<Ingridients> ingridients = new ArrayList<>();
     public ArrayList<Recipe> getArrayList(){
         return recipes;
     }
-
+    public ArrayList<Ingridients> getIngridList(){
+        return ingridients;
+    }
     static {
         AppCompatDelegate.setDefaultNightMode(
                 AppCompatDelegate.MODE_NIGHT_NO);
@@ -44,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
             recipes.add(new Recipe("Макароны", "20 мин", "250 ккал", R.drawable.rice, R.drawable.favactive, false));
             recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.meat, R.drawable.favactive, true));
             recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pizza, R.drawable.favactive, true));
+        }
+
+        if(ingridients.size()==0){
+            ingridients.add(new Ingridients("Макароны", true));
+            ingridients.add(new Ingridients("Гречка", true));
+            ingridients.add(new Ingridients("Молоко", true));
+            ingridients.add(new Ingridients("Масло", true));
         }
 
         mainFrag = new MainScreenFragment();

@@ -1,6 +1,7 @@
 package com.example.cookmasterf;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+
 import java.util.ArrayList;
 
-class RecipeAdapter extends ArrayAdapter<Recipe> {
+public class RecipeAdapter extends ArrayAdapter<Recipe> {
+
     private LayoutInflater inflater;
     private int layout;
     private ArrayList<Recipe> recipesList;
@@ -46,6 +51,13 @@ class RecipeAdapter extends ArrayAdapter<Recipe> {
             viewHolder.imageFavView.setImageResource(R.drawable.favnotactive);
         }
 
+        viewHolder.RecFull.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//
+            }
+        });
+
         viewHolder.imageFavView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,14 +69,17 @@ class RecipeAdapter extends ArrayAdapter<Recipe> {
                     viewHolder.imageFavView.setImageResource(R.drawable.favactive);
                 }
             }
+
         });
 
         return convertView;
     }
+
     private class ViewHolder {
         final TextView nameView, timeView, calorieView;
         final ImageView imageRecView;
         final ImageButton imageFavView;
+        ConstraintLayout RecFull;
 
         ViewHolder(View view){
             timeView = (TextView) view.findViewById(R.id.recipeTime);
@@ -72,6 +87,7 @@ class RecipeAdapter extends ArrayAdapter<Recipe> {
             calorieView = (TextView) view.findViewById(R.id.recipeKkal);
             imageRecView = (ImageView) view.findViewById(R.id.recipeImage);
             imageFavView = (ImageButton) view.findViewById(R.id.favoritesImage);
+            RecFull = (ConstraintLayout) view.findViewById(R.id.list_item_info);
         }
     }
 }

@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentIngridients">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddIngridFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/IngridientsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:fontFamily="@font/montserrat_regular"
-            android:text="@string/Ingridients"
-            android:textColor="@color/MainGreen"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <EditText
-            android:id="@+id/ingridSeach"
+            android:id="@+id/ingridSeachNotInFridge"
             android:inputType="text"
             android:layout_width="0dp"
             app:layout_constraintWidth_default="percent"
@@ -44,16 +29,16 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/IngridientsTitle" />
+            app:layout_constraintTop_toTopOf="parent" />
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:id="@+id/ingridBtnSearch"
+            android:id="@+id/ingridBtnSearchNotInFridge"
             android:layout_width="0dp"
             app:layout_constraintWidth_default="percent"
             app:layout_constraintWidth_percent="0.35"
             android:layout_height="40dp"
-            app:layout_constraintLeft_toRightOf="@+id/ingridSeach"
-            app:layout_constraintTop_toBottomOf="@+id/IngridientsTitle"
+            app:layout_constraintLeft_toRightOf="@+id/ingridSeachNotInFridge"
+            app:layout_constraintTop_toTopOf="parent"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:layout_marginTop="10dp"
@@ -65,19 +50,19 @@
             android:textSize="13sp"
             ></Button>
         <TextView
-            android:id="@+id/fridgeName"
+            android:id="@+id/NotInfridgeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/ingridSeach"
+            app:layout_constraintTop_toBottomOf="@+id/ingridBtnSearchNotInFridge"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="12dp"
             android:textSize="14sp"
             android:textColor="@color/black"
             android:fontFamily="@font/montserrat_bold"
-            android:text="@string/fridge"></TextView>
+            android:text="@string/NotInFridge"></TextView>
         <ListView
-            android:id="@+id/ingridList"
+            android:id="@+id/AllingridList"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginLeft="15dp"
@@ -86,17 +71,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fridgeName"
+            app:layout_constraintTop_toBottomOf="@id/NotInfridgeName"
             android:scrollbars="none"/>
-        <ImageButton
-            android:id="@+id/addToFridge"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/ic_plus_image"></ImageButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
