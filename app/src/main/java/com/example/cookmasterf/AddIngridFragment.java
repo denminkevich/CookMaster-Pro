@@ -3,7 +3,7 @@ package com.example.cookmasterf;
 import android.content.Context;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
+import android.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class AddIngridFragment extends Fragment {
     private Context mContext;
     ArrayList<Ingridients> ingrid;
+    ArrayList<Ingridients> AllIngrid;
 
     public AddIngridFragment() {
         // Required empty public constructor
@@ -31,8 +32,9 @@ public class AddIngridFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_add_ingrid, null);
         ingrid = ((MainActivity) getActivity()).getIngridList();
+        AllIngrid = ((MainActivity) getActivity()).getAllIngridList();
         ListView ingridList = (ListView) v.findViewById(R.id.AllingridList);
-        IngridAdapter adapter = new IngridAdapter(mContext, R.layout.ingridient_item, ingrid);
+        IndridAddAdapter adapter = new IndridAddAdapter(mContext, R.layout.ingridient_item, ingrid, AllIngrid);
         ingridList.setAdapter(adapter);
 
 

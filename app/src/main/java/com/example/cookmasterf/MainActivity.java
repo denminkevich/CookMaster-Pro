@@ -18,12 +18,18 @@ public class MainActivity extends AppCompatActivity {
     FragmentList listFrag;
     ArrayList<Recipe> recipes = new ArrayList<Recipe>();
     ArrayList<Ingridients> ingridients = new ArrayList<>();
+    ArrayList<Ingridients> AllIngrid = new ArrayList<>();
+
     public ArrayList<Recipe> getArrayList(){
         return recipes;
     }
     public ArrayList<Ingridients> getIngridList(){
         return ingridients;
     }
+    public ArrayList<Ingridients> getAllIngridList(){
+        return AllIngrid;
+    }
+
     static {
         AppCompatDelegate.setDefaultNightMode(
                 AppCompatDelegate.MODE_NIGHT_NO);
@@ -50,10 +56,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(ingridients.size()==0){
-            ingridients.add(new Ingridients("Макароны", true));
-            ingridients.add(new Ingridients("Гречка", true));
-            ingridients.add(new Ingridients("Молоко", true));
-            ingridients.add(new Ingridients("Масло", true));
+//            ingridients.add(new Ingridients("Макароны", true));
+//            ingridients.add(new Ingridients("Гречка", true));
+//            ingridients.add(new Ingridients("Молоко", true));
+//            ingridients.add(new Ingridients("Масло", true));
+        }
+
+        if(AllIngrid.size()==0){
+            AllIngrid.add(new Ingridients("Макароны", false));
+            AllIngrid.add(new Ingridients("Гречка", false));
+            AllIngrid.add(new Ingridients("Молоко", false));
+            AllIngrid.add(new Ingridients("Масло", false));
+            AllIngrid.add(new Ingridients("Подсолнечное масло", false));
+            AllIngrid.add(new Ingridients("Соль", false));
+            AllIngrid.add(new Ingridients("Сахар", false));
+            AllIngrid.add(new Ingridients("Рис", false));
+            AllIngrid.add(new Ingridients("Говядина", false));
+            AllIngrid.add(new Ingridients("Куриная грудка", false));
+
         }
 
         mainFrag = new MainScreenFragment();

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class FragmentIngridients extends Fragment {
     private Context mContext;
     ArrayList<Ingridients> ingrid;
+    ArrayList<Ingridients> AllIngrid;
 
     public FragmentIngridients() {
 
@@ -33,18 +34,19 @@ public class FragmentIngridients extends Fragment {
         View v = inflater.inflate(R.layout.fragment_ingridients, null);
 
         ingrid = ((MainActivity) getActivity()).getIngridList();
+        AllIngrid = ((MainActivity) getActivity()).getAllIngridList();
 
         ListView ingridList = (ListView) v.findViewById(R.id.ingridList);
-        IngridAdapter adapter = new IngridAdapter(mContext, R.layout.ingridient_item, ingrid);
+        IngridAdapter adapter = new IngridAdapter(mContext, R.layout.ingridient_item, ingrid, AllIngrid);
         ingridList.setAdapter(adapter);
 
         ImageButton PlusBtn = (ImageButton) v.findViewById(R.id.addToFridge);
         PlusBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                FullRecipe fullRecFrag = new FullRecipe();
+                AddIngridFragment addIngridFrag = new AddIngridFragment();
                 getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.frgmCont, fullRecFrag, "findThisFragment")
+                        .replace(R.id.frgmCont, addIngridFrag, "findThisFragment")
                         .addToBackStack(null)
                         .commit();
             }

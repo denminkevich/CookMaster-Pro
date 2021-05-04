@@ -21,7 +21,6 @@
     android:id="@+id/ingrid_img"
     android:layout_width="16dp"
     android:layout_height="16dp"
-    android:background="@drawable/delete_icon"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="@+id/ingrid_item"
     android:layout_marginTop="5dp"

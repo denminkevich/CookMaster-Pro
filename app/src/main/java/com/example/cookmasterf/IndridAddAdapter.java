@@ -1,62 +1,61 @@
 package com.example.cookmasterf;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-public class IngridAdapter extends ArrayAdapter<Ingridients> {
+public class IndridAddAdapter extends ArrayAdapter<Ingridients> {
     private LayoutInflater inflater;
     private int layout;
     private ArrayList<Ingridients> ingridList;
-    private ArrayList<Ingridients> AllIngridList;
+    private ArrayList<Ingridients> AllIngrid;
 
-    IngridAdapter(Context context, int resource, ArrayList<Ingridients> ingrid, ArrayList<Ingridients> AllIngrid) {
-        super(context, resource, ingrid);
+    IndridAddAdapter(Context context, int resource, ArrayList<Ingridients> ingrid, ArrayList<Ingridients> AllIngrid) {
+        super(context, resource, AllIngrid);
         this.ingridList = ingrid;
-        this.AllIngridList = AllIngrid;
+        this.AllIngrid = AllIngrid;
         this.layout = resource;
         this.inflater = LayoutInflater.from(context);
     }
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        final IngridAdapter.ViewHolder viewHolder;
+        final IndridAddAdapter.ViewHolder viewHolder;
         if(convertView==null){
             convertView = inflater.inflate(this.layout, parent, false);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         }
         else{
-            viewHolder = (IngridAdapter.ViewHolder) convertView.getTag();
+            viewHolder = (IndridAddAdapter.ViewHolder) convertView.getTag();
         }
-        final Ingridients Allingridients = ingridList.get(position);
+        final Ingridients ingridients = AllIngrid.get(position);
 
-        viewHolder.nameView.setText(Allingridients.getName());
-        viewHolder.imgIngrid.setImageResource(R.drawable.ic_delete_icon);
+        viewHolder.nameView.setText(ingridients.getName());
 
-        if (Allingridients.getInFridge() == true) {
-            notifyDataSetChanged();
+        if (ingridients.getInFridge() == false) {
+            viewHolder.imgIngrid.setImageResource(R.drawable.ic_simple_plus);
         } else {
-            ingridList.remove(position);
-            notifyDataSetChanged();
+            viewHolder.imgIngrid.setImageResource(R.drawable.ic_delete_icon);
         }
 
         viewHolder.imgIngrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Allingridients.getInFridge() == true) {
-                    Allingridients.setInFridge(false);
-                    ingridList.remove(position);
+                if (ingridients.getInFridge() == true) {
+                    ingridients.setInFridge(false);
+                    viewHolder.imgIngrid.setImageResource(R.drawable.ic_delete_icon);
+                    ingridList.remove(ingridients);
+                    notifyDataSetChanged();
+                } else if (ingridients.getInFridge() == false) {
+                    ingridients.setInFridge(true);
+                    viewHolder.imgIngrid.setImageResource(R.drawable.ic_simple_plus);
+                    ingridList.add(ingridList.size(), ingridients);
                     notifyDataSetChanged();
                 }
             }
