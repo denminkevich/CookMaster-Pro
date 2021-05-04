@@ -16,6 +16,7 @@ public class AddIngridFragment extends Fragment {
     private Context mContext;
     ArrayList<Ingridients> ingrid;
     ArrayList<Ingridients> AllIngrid;
+    ArrayList<Ingridients> ShopIngrid;
 
     public AddIngridFragment() {
         // Required empty public constructor
@@ -33,8 +34,9 @@ public class AddIngridFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_add_ingrid, null);
         ingrid = ((MainActivity) getActivity()).getIngridList();
         AllIngrid = ((MainActivity) getActivity()).getAllIngridList();
+        ShopIngrid = ((MainActivity) getActivity()).getShopIngridList();
         ListView ingridList = (ListView) v.findViewById(R.id.AllingridList);
-        IndridAddAdapter adapter = new IndridAddAdapter(mContext, R.layout.ingridient_item, ingrid, AllIngrid);
+        IndridAddAdapter adapter = new IndridAddAdapter(mContext, R.layout.ingridient_item, ingrid, AllIngrid, ShopIngrid);
         ingridList.setAdapter(adapter);
 
 

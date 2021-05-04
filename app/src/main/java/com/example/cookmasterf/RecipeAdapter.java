@@ -1,5 +1,7 @@
 package com.example.cookmasterf;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
     private LayoutInflater inflater;
     private int layout;
     private ArrayList<Recipe> recipesList;
+
 
     RecipeAdapter(Context context, int resource, ArrayList<Recipe> recipes) {
         super(context, resource, recipes);
@@ -54,7 +56,12 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
         viewHolder.RecFull.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Fragment FullRec = new FullRecipe();
 //
+//                getActivity().getFragmentManager().beginTransaction()
+//                        .replace(R.id.frgmCont, FullRec, "findThisFragment")
+//                        .addToBackStack(null)
+//                        .commit();
             }
         });
 

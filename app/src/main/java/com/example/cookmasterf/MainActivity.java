@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Recipe> recipes = new ArrayList<Recipe>();
     ArrayList<Ingridients> ingridients = new ArrayList<>();
     ArrayList<Ingridients> AllIngrid = new ArrayList<>();
+    ArrayList<Ingridients> ShopIngrid = new ArrayList<>();
+
 
     public ArrayList<Recipe> getArrayList(){
         return recipes;
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public ArrayList<Ingridients> getAllIngridList(){
         return AllIngrid;
+    }
+    public ArrayList<Ingridients> getShopIngridList(){
+        return ShopIngrid;
     }
 
     static {
@@ -56,10 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(ingridients.size()==0){
-//            ingridients.add(new Ingridients("Макароны", true));
-//            ingridients.add(new Ingridients("Гречка", true));
-//            ingridients.add(new Ingridients("Молоко", true));
-//            ingridients.add(new Ingridients("Масло", true));
+
         }
 
         if(AllIngrid.size()==0){
