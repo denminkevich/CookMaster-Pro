@@ -21,5 +21,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="isInFridge">Продукт уже есть в холодильнике</string>
     <string name="AddFridge">Продукт добавлен в ваш список</string>
+    <string name="NoFavRec">У Вас нет избранных рецептов</string>
+    <string name="NoInList">Добавьте продукты в список</string>
 
 </resources>

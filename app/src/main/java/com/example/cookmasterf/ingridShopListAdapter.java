@@ -41,10 +41,6 @@ public class ingridShopListAdapter extends ArrayAdapter<Ingridients> {
 
         viewHolder.nameView.setText(ingridients.getName());
 
-        if (ShopIngrid.isEmpty()) {
-
-        }
-
         if (ingridients.getInFridge() == true) {
             ShopIngrid.remove(ingridients);
         }

@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class FragmentFavorite extends Fragment {
@@ -16,7 +19,6 @@ public class FragmentFavorite extends Fragment {
 
     ArrayList<Recipe> recipes;
     ArrayList<Recipe> FavRecipes;
-
 
     public FragmentFavorite() {
         // Required empty public constructor
@@ -42,4 +44,5 @@ public class FragmentFavorite extends Fragment {
 
     return v;
     }
+
 }

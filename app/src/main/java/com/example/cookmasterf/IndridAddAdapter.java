@@ -52,13 +52,11 @@ public class IndridAddAdapter extends ArrayAdapter<Ingridients> {
             @Override
             public void onClick(View v) {
                 if (ingridients.getInFridge() == true) {
-                    Toast toast = Toast.makeText(v.getContext(), R.string.isInFridge, Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(v.getContext(), R.string.isInFridge, Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
                     if (ShopIngrid.contains(ingridients) == false) {
-                        ShopIngrid.add(ingridients);
-                        Toast toast = Toast.makeText(v.getContext(), R.string.AddFridge, Toast.LENGTH_LONG);
-                        toast.show();
+                        ShopIngrid.add(ShopIngrid.size(), ingridients);
                     }
                     notifyDataSetChanged();
                 }
@@ -77,6 +75,7 @@ public class IndridAddAdapter extends ArrayAdapter<Ingridients> {
                     ingridients.setInFridge(true);
                     viewHolder.imgIngrid.setImageResource(R.drawable.ic_simple_plus);
                     ingridList.add(ingridList.size(), ingridients);
+                    ShopIngrid.remove(ingridients);
                     notifyDataSetChanged();
                 }
             }

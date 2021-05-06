@@ -12,6 +12,7 @@ package com.example.cookmasterf;
         import android.widget.ImageButton;
         import android.widget.ImageView;
         import android.widget.TextView;
+        import android.widget.Toast;
 
         import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -42,7 +43,7 @@ public class FavouriteAdapter extends ArrayAdapter<Recipe> {
         else{
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        final Recipe recipe = recipesList.get(position);
+        final Recipe recipe = FavList.get(position);
 
         viewHolder.nameView.setText(recipe.getName());
         viewHolder.timeView.setText(recipe.getTime());
@@ -52,7 +53,7 @@ public class FavouriteAdapter extends ArrayAdapter<Recipe> {
         if (recipe.getFavourite() == true) {
             viewHolder.imageFavView.setImageResource(R.drawable.favactive);
         } else {
-            viewHolder.imageFavView.setImageResource(R.drawable.favnotactive);
+            FavList.remove(recipe);
         }
 
         viewHolder.RecFull.setOnClickListener(new View.OnClickListener() {

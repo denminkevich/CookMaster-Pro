@@ -77,7 +77,7 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
                     notifyDataSetChanged();
                 } else {
                     recipe.setFavourite(true);
-                    FavList.add(recipe);
+                    FavList.add(FavList.size(), recipe);
                     viewHolder.imageFavView.setImageResource(R.drawable.favactive);
                     notifyDataSetChanged();
                 }

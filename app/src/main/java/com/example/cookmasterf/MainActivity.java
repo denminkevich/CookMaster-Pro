@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -112,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.imageButtonFavorite:
                 fTrans.addToBackStack(null);
                 fTrans.replace(R.id.frgmCont, favFrag);
+                if (FavRecipes.isEmpty()) {
+                    Toast toast = Toast.makeText(v.getContext(), R.string.NoFavRec, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
                 imageButtonFavorite.setImageResource(R.drawable.ic_icon_fav_active);
                 imageButtonMain.setImageResource(R.drawable.ic_icon_main_nonactive);
                 imageButtonIngredients.setImageResource(R.drawable.ic_icon_ingrid_nonactive);
@@ -128,6 +135,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.imageButtonShoppingList:
                 fTrans.addToBackStack(null);
                 fTrans.replace(R.id.frgmCont, listFrag);
+                if (ShopIngrid.isEmpty()) {
+                    Toast toast = Toast.makeText(v.getContext(), R.string.NoInList, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
                 imageButtonShoppingList.setImageResource(R.drawable.ic_icon_list_active);
                 imageButtonIngredients.setImageResource(R.drawable.ic_icon_ingrid_nonactive);
                 imageButtonFavorite.setImageResource(R.drawable.ic_icon_fav_nonactive);
