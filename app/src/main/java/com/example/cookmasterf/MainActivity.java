@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     FragmentIngridients ingridFrag;
     FragmentList listFrag;
     ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+    ArrayList<Recipe> FavRecipes = new ArrayList<>();
     ArrayList<Ingridients> ingridients = new ArrayList<>();
     ArrayList<Ingridients> AllIngrid = new ArrayList<>();
     ArrayList<Ingridients> ShopIngrid = new ArrayList<>();
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     public ArrayList<Recipe> getArrayList(){
         return recipes;
+    }
+    public ArrayList<Recipe> getFavList(){
+        return FavRecipes;
     }
     public ArrayList<Ingridients> getIngridList(){
         return ingridients;
@@ -54,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if(recipes.size()==0){
-            recipes.add(new Recipe("Паста по итальянски", "30 мин", "330 ккал", R.drawable.pancakes, R.drawable.favactive, true));
+            recipes.add(new Recipe("Паста по итальянски", "30 мин", "330 ккал", R.drawable.pancakes, R.drawable.favactive, false));
             recipes.add(new Recipe("Макароны", "20 мин", "250 ккал", R.drawable.rice, R.drawable.favactive, false));
-            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.meat, R.drawable.favactive, true));
-            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pizza, R.drawable.favactive, true));
+            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.meat, R.drawable.favactive, false));
+            recipes.add(new Recipe("Лазанья", "50 мин", "450 ккал", R.drawable.pizza, R.drawable.favactive, false));
         }
 
         if(ingridients.size()==0){

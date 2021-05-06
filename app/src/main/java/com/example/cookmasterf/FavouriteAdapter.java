@@ -1,31 +1,31 @@
+
 package com.example.cookmasterf;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
-import android.content.Intent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
+        import android.app.Activity;
+        import android.app.Fragment;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.ArrayAdapter;
+        import android.widget.ImageButton;
+        import android.widget.ImageView;
+        import android.widget.TextView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
+        import androidx.constraintlayout.widget.ConstraintLayout;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
-public class RecipeAdapter extends ArrayAdapter<Recipe> {
+public class FavouriteAdapter extends ArrayAdapter<Recipe> {
 
     private LayoutInflater inflater;
     private int layout;
     private ArrayList<Recipe> recipesList;
     private ArrayList<Recipe> FavList;
 
-
-    RecipeAdapter(Context context, int resource, ArrayList<Recipe> recipes, ArrayList<Recipe> favList) {
-        super(context, resource, recipes);
+    FavouriteAdapter(Context context, int resource, ArrayList<Recipe> recipes, ArrayList<Recipe> favList) {
+        super(context, resource, favList);
         this.recipesList = recipes;
         this.FavList = favList;
         this.layout = resource;
@@ -74,11 +74,6 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
                     recipe.setFavourite(false);
                     FavList.remove(recipe);
                     viewHolder.imageFavView.setImageResource(R.drawable.favnotactive);
-                    notifyDataSetChanged();
-                } else {
-                    recipe.setFavourite(true);
-                    FavList.add(recipe);
-                    viewHolder.imageFavView.setImageResource(R.drawable.favactive);
                     notifyDataSetChanged();
                 }
             }

@@ -17,6 +17,7 @@ public class MainScreenFragment extends Fragment {
     private Context mContext;
 
     ArrayList<Recipe> recipes;
+    ArrayList<Recipe> FavRecipe;
     public MainScreenFragment() {
         // Required empty public constructor
     }
@@ -34,9 +35,10 @@ public class MainScreenFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_main_screen, null);
         recipes = ((MainActivity) getActivity()).getArrayList();
+        FavRecipe = ((MainActivity) getActivity()).getFavList();
 
         ListView recipeList = (ListView) v.findViewById(R.id.recipeList);
-        RecipeAdapter adapter = new RecipeAdapter(mContext, R.layout.recipe_item, recipes);
+        RecipeAdapter adapter = new RecipeAdapter(mContext, R.layout.recipe_item, recipes, FavRecipe);
         recipeList.setAdapter(adapter);
 
 //        AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
