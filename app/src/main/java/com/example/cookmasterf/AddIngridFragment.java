@@ -8,6 +8,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -38,7 +40,13 @@ public class AddIngridFragment extends Fragment {
         ListView ingridList = (ListView) v.findViewById(R.id.AllingridList);
         IndridAddAdapter adapter = new IndridAddAdapter(mContext, R.layout.ingridient_item, ingrid, AllIngrid, ShopIngrid);
         ingridList.setAdapter(adapter);
-
+        ImageButton BackBtn = (ImageButton) v.findViewById(R.id.backBtn);
+        BackBtn.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        }));
 
         return v;
     }
