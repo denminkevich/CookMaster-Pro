@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
@@ -22,7 +23,6 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
     private int layout;
     private ArrayList<Recipe> recipesList;
     private ArrayList<Recipe> FavList;
-
 
     RecipeAdapter(Context context, int resource, ArrayList<Recipe> recipes, ArrayList<Recipe> favList) {
         super(context, resource, recipes);
@@ -58,12 +58,18 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
         viewHolder.RecFull.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Fragment FullRec = new FullRecipe();
-//
-//                getActivity().getFragmentManager().beginTransaction()
-//                        .replace(R.id.frgmCont, FullRec, "findThisFragment")
-//                        .addToBackStack(null)
-//                        .commit();
+                View viewV = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_full_recipe, null);
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+
+                ImageView recImage = (ImageView) viewV.findViewById(R.id.recipeFullImage);
+                ImageButton favFullRec = (ImageButton) viewV.findViewById(R.id.favoritesImage);
+
+                Fragment FullRec = new FullRecipe();
+
+                activity.getFragmentManager().beginTransaction()
+                        .replace(R.id.frgmCont, FullRec, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 

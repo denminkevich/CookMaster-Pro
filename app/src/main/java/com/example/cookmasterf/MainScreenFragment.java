@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.widget.ImageView;
 import android.widget.ListView;
 import java.util.ArrayList;
 
@@ -41,21 +43,6 @@ public class MainScreenFragment extends Fragment {
         RecipeAdapter adapter = new RecipeAdapter(mContext, R.layout.recipe_item, recipes, FavRecipe);
         recipeList.setAdapter(adapter);
 
-//        AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-//                // получаем выбранный пункт
-//                Recipe selectedRecipe = (Recipe) parent.getItemAtPosition(position);
-//
-//                FullRecipe fullRecFrag = new FullRecipe();
-//                getActivity().getFragmentManager().beginTransaction()
-//                        .replace(R.id.frgmCont, fullRecFrag, "findThisFragment")
-//                        .addToBackStack(null)
-//                        .commit();
-//
-//            }
-//        };
-//        recipeList.setOnItemClickListener(itemListener);
 
         return v;
     }

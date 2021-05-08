@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:id="@+id/recipeFullImage"
+            android:scaleType="centerCrop"
             ></ImageView>
         <ImageButton
             android:id="@+id/favoritesImage"
@@ -38,7 +39,6 @@
             android:clickable="false"
             android:focusable="false"
             android:fontFamily="@font/montserrat_regular"
-            android:text="@string/Ingridients"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="14sp"
@@ -75,6 +75,7 @@
                 android:textColor="@color/black"
                 android:textSize="14sp"></TextView>
             <TextView
+                android:id="@+id/FullRecipeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_regular"
