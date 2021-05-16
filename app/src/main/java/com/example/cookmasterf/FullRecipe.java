@@ -41,6 +41,6 @@ public class FullRecipe extends Fragment{
         RecTxt.setText("Курица");
 
         return v;
-
     }
+
 }

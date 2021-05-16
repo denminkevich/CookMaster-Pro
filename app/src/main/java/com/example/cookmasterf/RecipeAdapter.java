@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecipeAdapter extends ArrayAdapter<Recipe> {
 
@@ -60,9 +61,7 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
             public void onClick(View v) {
                 View viewV = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_full_recipe, null);
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
-
-                ImageView recImage = (ImageView) viewV.findViewById(R.id.recipeFullImage);
-                ImageButton favFullRec = (ImageButton) viewV.findViewById(R.id.favoritesImage);
+                Object selectedItem = (Object) recipe;
 
                 Fragment FullRec = new FullRecipe();
 

@@ -28,6 +28,7 @@ public class MainScreenFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext=context;
+
     }
 
     @Override
@@ -46,4 +47,24 @@ public class MainScreenFragment extends Fragment {
 
         return v;
     }
+
+//    @Override
+//    public void onViewCreated(View v, Bundle savedInstanceState) {
+//        ListView recipeList = (ListView) v.findViewById(R.id.recipeList);
+//        recipeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Object selectedItem = (Object) recipes.get(position);
+//                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+//
+//                Fragment FullRec = new FullRecipe();
+//
+//                activity.getFragmentManager().beginTransaction()
+//                        .replace(R.id.frgmCont, FullRec, "findThisFragment")
+//                        .addToBackStack(null)
+//                        .commit();
+//
+//            }
+//        });
+//    }
 }
